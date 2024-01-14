@@ -18,9 +18,17 @@ variable "GITHUB_OAUTH_CLIENTID" {
   description = "Github OAuth Apps clientId"
   type        = string
   sensitive   = true
+  validation {
+    condition = var.GITHUB_OAUTH_CLIENTID != ""
+    error_message = "Github OAuth Apps clientId is empty"
+  }
 }
 variable "GITHUB_OAUTH_CLIENTSECRET" {
   description = "Github OAuth Apps clientSecret"
   type        = string
   sensitive   = true
+  validation {
+    condition = var.GITHUB_OAUTH_CLIENTID != ""
+    error_message = "Github OAuth Apps clientSecret is empty"
+  }
 }
