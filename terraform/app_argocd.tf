@@ -15,8 +15,8 @@ resource "kubernetes_secret_v1" "github_oauth" {
     }
   }
   data = {
-    clientId     = var.GITHUB_OAUTH_CLIENTID
-    clientSecret = var.GITHUB_OAUTH_CLIENTSECRET
+    clientId     = var.github_oauth_clientId
+    clientSecret = var.github_oauth_clientSecret
   }
   type = "Opaque"
 }

@@ -14,21 +14,21 @@ variable "argocd" {
     }))
   })
 }
-variable "GITHUB_OAUTH_CLIENTID" {
+variable "github_oauth_clientId" {
   description = "Github OAuth Apps clientId"
   type        = string
   sensitive   = true
   validation {
-    condition = var.GITHUB_OAUTH_CLIENTID != ""
+    condition = var.github_oauth_clientId != ""
     error_message = "Github OAuth Apps clientId is empty"
   }
 }
-variable "GITHUB_OAUTH_CLIENTSECRET" {
+variable "github_oauth_clientSecret" {
   description = "Github OAuth Apps clientSecret"
   type        = string
   sensitive   = true
   validation {
-    condition = var.GITHUB_OAUTH_CLIENTSECRET != ""
+    condition = var.github_oauth_clientSecret != ""
     error_message = "Github OAuth Apps clientSecret is empty"
   }
 }
