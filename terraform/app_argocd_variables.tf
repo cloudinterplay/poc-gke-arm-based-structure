@@ -14,3 +14,13 @@ variable "argocd" {
     }))
   })
 }
+variable "GITHUB_OAUTH_CLIENTID" {
+  description = "Github OAuth Apps clientId"
+  type        = string
+  sensitive   = true
+}
+variable "GITHUB_OAUTH_CLIENTSECRET" {
+  description = "Github OAuth Apps clientSecret"
+  type        = string
+  sensitive   = true
+}

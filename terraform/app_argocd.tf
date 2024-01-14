@@ -6,6 +6,19 @@ resource "kubernetes_namespace_v1" "argocd" {
     name = var.argocd.namespace
   }
 }
+resource "kubernetes_secret_v1" "github_oauth" {
+  metadata {
+    namespace = kubernetes_namespace_v1.argocd.id
+    labels = {
+      "app.kubernetes.io/part-of" = "argocd"
+    }
+  }
+  data = {
+    clientId     = var.GITHUB_OAUTH_CLIENTID
+    clientSecret = var.GITHUB_OAUTH_CLIENTSECRET
+  }
+  type = "Opaque"
+}
 resource "helm_release" "kubernetes_argocd" {
   depends_on = [
     kubernetes_namespace_v1.argocd
