@@ -9,6 +9,7 @@ resource "kubernetes_namespace_v1" "argocd" {
 resource "kubernetes_secret_v1" "github_oauth" {
   metadata {
     namespace = kubernetes_namespace_v1.argocd.id
+    name      = "github-oauth"
     labels = {
       "app.kubernetes.io/part-of" = "argocd"
     }
