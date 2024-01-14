@@ -19,7 +19,7 @@ variable "argocd_oauth_clientId" {
   type        = string
   sensitive   = true
   validation {
-    condition = var.github_oauth_clientId != ""
+    condition = var.argocd_oauth_clientId != ""
     error_message = "ArgoCD OAuth Apps clientId is empty"
   }
 }
@@ -28,7 +28,7 @@ variable "argocd_oauth_clientSecret" {
   type        = string
   sensitive   = true
   validation {
-    condition = var.github_oauth_clientSecret != ""
+    condition = var.argocd_oauth_clientSecret != ""
     error_message = "ArgoCD OAuth Apps clientSecret is empty"
   }
 }
