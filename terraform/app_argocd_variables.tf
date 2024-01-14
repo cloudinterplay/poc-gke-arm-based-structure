@@ -28,7 +28,7 @@ variable "GITHUB_OAUTH_CLIENTSECRET" {
   type        = string
   sensitive   = true
   validation {
-    condition = var.GITHUB_OAUTH_CLIENTID != ""
+    condition = var.GITHUB_OAUTH_CLIENTSECRET != ""
     error_message = "Github OAuth Apps clientSecret is empty"
   }
 }
