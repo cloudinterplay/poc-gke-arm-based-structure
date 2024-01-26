@@ -1,6 +1,6 @@
 module "gke" {
   depends_on = [
-    google_compute_router_nat.nat
+    google_compute_subnetwork.subnetwork
   ]
   source = "git::https://github.com/tf-modules-gcp/terraform-gcp-gke-cluster.git//modules/cluster?ref=0.1.0"
   # Local Development
